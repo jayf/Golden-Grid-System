@@ -18,6 +18,7 @@ var baselineGridHeight = (24 / baseFontSize)+'em';
 
 var eightColBreakpoint = ((720-1) / baseFontSize)+'em';
 var sixteenColBreakpoint = ((1872-1) / baseFontSize)+'em';
+var topGutterOffset = '0px'; // in pixels, for when there's a top border or padding
 
 /*
 *  Note that the script might not work as expected if 
@@ -105,7 +106,7 @@ ender.domReady(function () {
         .ggs-guide div{background:'+guideInnerColor+';width:2px;height:100%;position:absolute;left:-1px;top:0;}\
         .ggs-0 div{left:auto;right:0.75em;}\
         .ggs-16 div{left:0.75em;}\
-        #ggs-baseline-container {opacity: '+guideOpacity+'; position: absolute; left:0; top:0; z-index: 8000; width: 100%; height: 100%; -webkit-transition: opacity 0.235s ease-out; -moz-transition: opacity 0.235s ease-out; -ms-transition: opacity 0.235s ease-out; transition: opacity 0.235s ease-out; overflow-y: hidden;}\
+        #ggs-baseline-container {opacity: '+guideOpacity+'; position: absolute; left:0; top:'+topGutterOffset+'; z-index: 8000; width: 100%; height: 100%; -webkit-transition: opacity 0.235s ease-out; -moz-transition: opacity 0.235s ease-out; -ms-transition: opacity 0.235s ease-out; transition: opacity 0.235s ease-out; overflow-y: hidden;}\
         .ggs-line {border-top: 1px dotted '+guideColor+'; height: '+baselineGridHeight+'; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -o-box-sizing: border-box; box-sizing: border-box;}\
         @media screen and (max-width: '+(eightColBreakpoint)+'){.ggs-2,.ggs-6,.ggs-10,.ggs-14{display:none;}}\
         @media screen and (max-width: '+(sixteenColBreakpoint)+'){.ggs-1,.ggs-3,.ggs-5,.ggs-7,.ggs-9,.ggs-11,.ggs-13,.ggs-15{display:none;}}\
